@@ -144,6 +144,7 @@ document.getElementById('moveDown').addEventListener('click', function() {
 
 twibbon.src = 'Hagavi_JKT48V.png'; // Make sure 'twibbon.png' is in the correct directory
 twibbon.onload = function() {
+    resizeCanvas();
     draw(); // Draw twibbon once it's loaded
 };
 
@@ -188,8 +189,9 @@ function draw() {
 }
 
 function resizeCanvas() {
-    canvas.width = $('#canvasContainer').width();
-    canvas.height = canvas.width; // Maintain aspect ratio
+    var canvasContainer = document.getElementById('canvasContainer');
+    canvas.width = twibbon.width; // Set canvas width to twibbon width
+    canvas.height = twibbon.height; // Set canvas height to twibbon height
     draw();
 }
 
